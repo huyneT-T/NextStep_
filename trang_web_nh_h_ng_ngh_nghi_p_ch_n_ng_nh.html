@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full bg-slate-950 text-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Định Hướng Nghề Nghiệp Học Sinh Lớp 12 THPT TIỂU LA</title>
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f3ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            accent: {
+              400: '#c084fc',
+              500: '#a855f7',
+              600: '#9333ea',
+            },
+            neon: {
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              pink: '#ec4899',
+              amber: '#f59e0b'
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'slide-up': 'slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'scale(0.98)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(16px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 20% 10%, #1e1b4b 0%, #0f172a 45%, #020617 100%);
+      min-height: 100vh;
+    }
+    
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .glass-card-interactive {
+      background: rgba(30, 41, 59, 0.5);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-interactive:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      background: rgba(30, 41, 59, 0.8);
+      transform: translateY(-2px);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 35%, #c084fc 70%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.6);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(99, 102, 241, 0.4);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(99, 102, 241, 0.7);
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
+
+  <header class="border-b border-slate-800/80 sticky top-0 z-50 backdrop-blur-md bg-slate-950/80">
+    <div class="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="resetAll()">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-accent-500 to-neon-pink flex items-center justify-center shadow-lg shadow-brand-500/30">
+          <i class="fa-solid fa-graduation-cap text-white text-xl"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xl font-extrabold tracking-tight gradient-text">EduPath 12</span>
+            <span class="text-[10px] font-bold tracking-widest text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full uppercase">K12 Specialized</span>
+          </div>
+          <p class="text-[11px] text-slate-400 font-medium hidden sm:block">Định hướng áp lực & Thử thách ngành học thực tế</p>
+        </div>
+      </div>
+
+      <button onclick="resetAll()" class="text-xs text-slate-400 hover:text-white flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800 hover:bg-slate-800/80 transition-all">
+        <i class="fa-solid fa-rotate-left text-brand-400"></i>
+        <span>Làm lại từ đầu</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-6 sm:py-8 flex flex-col justify-between">
+    
+    <!-- Multi-step Indicator -->
+    <div class="mb-8">
+      <div class="flex items-center justify-between relative max-w-3xl mx-auto px-4">
+        <!-- Background Track -->
+        <div class="absolute top-1/2 left-0 w-full h-1 bg-slate-800/80 -translate-y-1/2 z-0 rounded-full"></div>
+        <!-- Active Line Progress -->
+        <div id="progress-line" class="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-brand-500 via-accent-500 to-neon-pink -translate-y-1/2 z-0 transition-all duration-500 rounded-full" style="width: 0%"></div>
+
+        <!-- Step 1 Dot -->
+        <div class="relative z-10 flex flex-col items-center">
+          <div id="step1-dot" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 bg-brand-600 text-white shadow-lg shadow-brand-600/40 ring-4 ring-slate-950">
+            1
+          </div>
+          <span id="step1-label" class="text-[11px] font-bold mt-2 text-brand-400 transition-colors">Tổ hợp môn</span>
+        </div>
+
+        <!-- Step 2 Dot -->
+        <div class="relative z-10 flex flex-col items-center">
+          <div id="step2-dot" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 bg-slate-900 text-slate-500 ring-4 ring-slate-950 border border-slate-800">
+            2
+          </div>
+          <span id="step2-label" class="text-[11px] font-bold mt-2 text-slate-500 transition-colors">Tâm lý 12</span>
+        </div>
+
+        <!-- Step 3 Dot -->
+        <div class="relative z-10 flex flex-col items-center">
+          <div id="step3-dot" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 bg-slate-900 text-slate-500 ring-4 ring-slate-950 border border-slate-800">
+            3
+          </div>
+          <span id="step3-label" class="text-[11px] font-bold mt-2 text-slate-500 transition-colors">Ngành & Trường</span>
+        </div>
+
+        <!-- Step 4 Dot -->
+        <div class="relative z-10 flex flex-col items-center">
+          <div id="step4-dot" class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 bg-slate-900 text-slate-500 ring-4 ring-slate-950 border border-slate-800">
+            4
+          </div>
+          <span id="step4-label" class="text-[11px] font-bold mt-2 text-slate-500 transition-colors">Test Thực Hành</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN VIEWS CONTAINER -->
+    <div id="app-container" class="relative">
+
+      <!-- ================= STEP 1: CHỌN / NHẬP TỔ HỢP THI ================= -->
+      <section id="step-1" class="animate-fade-in">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-800 space-y-6">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="inline-block p-3 rounded-2xl bg-brand-500/10 text-brand-400 mb-3 border border-brand-500/20">
+              <i class="fa-solid fa-list-check text-2xl"></i>
+            </span>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Chọn Hoặc Điền Tổ Hợp Môn Xét Tuyển</h1>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Bạn có thể **điền trực tiếp** môn/mã khối (ví dụ: <code class="bg-slate-800 px-1.5 py-0.5 rounded text-brand-300">Toán, Lý, Anh</code> hoặc <code class="bg-slate-800 px-1.5 py-0.5 rounded text-brand-300">D01</code>) hoặc **tick chọn nhanh** trong danh sách khối thi mở rộng bên dưới.
+            </p>
+          </div>
+
+          <!-- INPUT METHOD 1: TEXT INPUT & TAGS CREATOR -->
+          <div class="bg-slate-900/90 rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <label class="block text-xs font-bold text-slate-300 flex items-center gap-2">
+              <i class="fa-solid fa-pen-to-square text-accent-400"></i>
+              <span>Điền trực tiếp tên môn học thế mạnh hoặc Mã khối (Nhấn Enter hoặc phím phẩy để thêm):</span>
+            </label>
+            
+            <div class="flex flex-wrap items-center gap-2 p-2.5 rounded-xl bg-slate-950 border border-slate-800 focus-within:border-brand-500 transition-all min-h-[50px]">
+              <!-- Active Selected Tags -->
+              <div id="selected-tags-container" class="flex flex-wrap gap-2"></div>
+
+              <!-- Input text box -->
+              <input type="text" id="custom-subject-input" placeholder="Ví dụ: A00, D01, hoặc Toán, Hóa, Sinh..." 
+                     class="flex-1 bg-transparent border-none text-xs text-slate-100 placeholder-slate-500 focus:outline-none min-w-[180px] py-1">
+              
+              <button onclick="addCustomInputTag()" class="px-3 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                <i class="fa-solid fa-plus text-[10px]"></i> Thêm
+              </button>
+            </div>
+            <p class="text-[11px] text-slate-400">Mẹo: Hệ thống tự động nhận diện cả mã khối thi phổ biến lẫn danh sách từng môn học lẻ bạn tự điền.</p>
+          </div>
+
+          <!-- INPUT METHOD 2: EXTENDED TICK LIST WITH CATEGORY FILTERS & SEARCH -->
+          <div class="space-y-4 pt-2">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-slate-200">Hoặc chọn nhanh từ danh sách khối thi:</span>
+                <span id="subject-count-badge" class="text-[10px] bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded-full font-semibold border border-brand-500/30">20+ Tổ hợp</span>
+              </div>
+
+              <!-- Fast Search Filter Input -->
+              <div class="relative w-full sm:w-64">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+                <input type="text" id="subject-search" oninput="filterSubjects()" placeholder="Lọc khối (A00, Văn, Anh...)" 
+                       class="w-full pl-8 pr-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500">
+              </div>
+            </div>
+
+            <!-- Group Filter Tabs -->
+            <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-2" id="group-filter-tabs">
+              <button onclick="setFilterGroup('ALL')" class="group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-brand-600 text-white flex-shrink-0 transition-all">Tất cả</button>
+              <button onclick="setFilterGroup('A')" class="group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white flex-shrink-0 transition-all">Khối A (Tự nhiên)</button>
+              <button onclick="setFilterGroup('B')" class="group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white flex-shrink-0 transition-all">Khối B (Y Sinh)</button>
+              <button onclick="setFilterGroup('C')" class="group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white flex-shrink-0 transition-all">Khối C (Xã hội)</button>
+              <button onclick="setFilterGroup('D')" class="group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white flex-shrink-0 transition-all">Khối D (Ngoại ngữ)</button>
+              <button onclick="setFilterGroup('ART')" class="group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white flex-shrink-0 transition-all">Năng Khiếu (H, V, K...)</button>
+            </div>
+
+            <!-- Subject Combination Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-h-[380px] overflow-y-auto custom-scrollbar p-1" id="subjects-grid">
+              <!-- Dynamic Injection -->
+            </div>
+          </div>
+
+          <!-- Error Alert Container -->
+          <div id="step1-error" class="hidden p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs text-center flex items-center justify-center gap-2">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>Vui lòng chọn hoặc điền ít nhất một tổ hợp môn/môn học để tiếp tục!</span>
+          </div>
+
+          <!-- Action Button -->
+          <div class="flex justify-between items-center pt-2">
+            <span class="text-xs text-slate-400">Đã chọn: <strong id="total-selected-count" class="text-brand-400 font-bold">0</strong> tổ hợp</span>
+            <button onclick="goToStep2()" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-500 hover:to-accent-500 font-bold text-white shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2 group text-sm">
+              <span>Tiếp Theo: Test Tâm Lý Lớp 12</span>
+              <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STEP 2: TEST TÂM LÝ & ÁP LỰC 12 ================= -->
+      <section id="step-2" class="hidden">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-800">
+          <!-- Quiz Header -->
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-accent-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-brain"></i>
+                <span>Phân Tích Động Lực & Áp Lực Thi Cử</span>
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Bài Test Tâm Lý Học Sinh Lớp 12</h2>
+            </div>
+            <div id="quiz-counter" class="text-xs font-bold bg-slate-900 text-brand-400 px-3 py-1.5 rounded-xl border border-slate-800 shadow-inner">
+              Câu 1 / 12
+            </div>
+          </div>
+
+          <!-- Progress bar inside test -->
+          <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mb-6 border border-slate-800">
+            <div id="inner-quiz-progress" class="bg-gradient-to-r from-brand-500 to-accent-500 h-full w-0 transition-all duration-300"></div>
+          </div>
+
+          <!-- Question & Options -->
+          <div id="quiz-question-container" class="min-h-[300px] flex flex-col justify-between">
+            <div>
+              <div id="question-tag" class="inline-block px-2.5 py-0.5 rounded-md bg-brand-500/10 text-brand-400 text-[10px] font-bold uppercase tracking-wider mb-3 border border-brand-500/20">
+                <!-- Tag -->
+              </div>
+              <h3 id="question-text" class="text-base sm:text-lg font-semibold text-slate-100 mb-6 leading-relaxed">
+                <!-- Question content -->
+              </h3>
+
+              <div id="options-container" class="space-y-3">
+                <!-- Options -->
+              </div>
+            </div>
+
+            <!-- Quiz Nav Buttons -->
+            <div class="flex justify-between items-center mt-8 pt-4 border-t border-slate-800/80">
+              <button id="btn-prev-question" onclick="prevQuestion()" class="px-5 py-2.5 rounded-xl border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 text-xs font-semibold transition-all flex items-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>Câu trước</span>
+              </button>
+
+              <button id="btn-next-question" onclick="nextQuestion()" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition-all shadow-md flex items-center gap-2 disabled:opacity-50">
+                <span>Tiếp theo</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= STEP 3: GỢI Ý NGÀNH HỌC & TRƯỜNG ĐẠI HỌC ================= -->
+      <section id="step-3" class="hidden">
+        <!-- Results Summary Banner -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl mb-8 border-l-4 border-l-accent-500 relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-accent-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+            <div class="space-y-2">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20 text-accent-400 text-xs font-bold">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Chân dung tâm lý & Động lực thi cử</span>
+              </div>
+              <h2 id="personality-title" class="text-2xl sm:text-3xl font-extrabold text-white">
+                <!-- Dynamic Title -->
+              </h2>
+              <p id="personality-desc" class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
+                <!-- Dynamic Description -->
+              </p>
+            </div>
+
+            <!-- Selected Filters summary -->
+            <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800 min-w-[220px] flex-shrink-0">
+              <div class="text-[11px] text-slate-400 font-semibold mb-2">Tổ hợp môn đã chọn / điền:</div>
+              <div id="summary-subjects" class="flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar">
+                <!-- Subject Pills -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4 flex items-center justify-between">
+          <div>
+            <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
+              <i class="fa-solid fa-fire text-amber-400"></i>
+              <span>Top Ngành Phù Hợp & Danh Sách Trường Đại Học Tại VN</span>
+            </h3>
+            <p class="text-xs text-slate-400">Bấm vào từng ngành để xem Trường đào tạo tốt nhất hoặc trải nghiệm Bài test thực hành</p>
+          </div>
+        </div>
+
+        <!-- Career & University Cards Container -->
+        <div id="career-list" class="space-y-6">
+          <!-- Dynamic career cards -->
+        </div>
+      </section>
+
+      <!-- ================= STEP 4: BÀI TEST THỰC HÀNH / TƯƠNG TÁC THỰC TẾ ================= -->
+      <section id="step-4" class="hidden">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-800">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-neon-cyan flex items-center gap-1.5">
+                <i class="fa-solid fa-flask-vial"></i>
+                <span>Thử Thách Nhạy Bén Nghề Nghiệp</span>
+              </span>
+              <h2 id="challenge-major-title" class="text-xl sm:text-2xl font-extrabold text-white mt-1">
+                <!-- Major Challenge Title -->
+              </h2>
+            </div>
+
+            <button onclick="backToStep3()" class="px-3.5 py-1.5 rounded-xl border border-slate-800 text-xs text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+              <i class="fa-solid fa-arrow-left mr-1"></i> Quay lại danh sách
+            </button>
+          </div>
+
+          <!-- Dynamic Workspace Container -->
+          <div id="challenge-workspace" class="min-h-[420px]">
+            <!-- Injected Challenge Tool -->
+          </div>
+
+          <!-- Practical Challenge Result Modal/Banner (Hidden initially) -->
+          <div id="challenge-result-card" class="hidden mt-6 p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-brand-950/40 border border-brand-500/30 text-center animate-slide-up">
+            <div class="w-16 h-16 rounded-2xl bg-brand-500/20 border border-brand-500/40 text-brand-400 text-2xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-brand-500/20">
+              <i id="challenge-result-icon" class="fa-solid fa-trophy"></i>
+            </div>
+            <h3 id="challenge-result-score" class="text-2xl font-black text-white">Chỉ Số Nhạy Bén: 92/100</h3>
+            <p id="challenge-result-feedback" class="text-xs sm:text-sm text-slate-300 mt-2 max-w-xl mx-auto leading-relaxed">
+              <!-- Result feedback -->
+            </p>
+            <div class="mt-5 flex justify-center gap-3">
+              <button onclick="backToStep3()" class="px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition-all border border-slate-700">
+                Thử Thách Ngành Khác
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // ================= EXTENDED SUBJECT COMBINATIONS DATABASE =================
+    const EXTENDED_SUBJECTS = [
+      // Khối A
+      { id: 'A00', group: 'A', name: 'A00: Toán, Vật lý, Hóa học', desc: 'Kỹ thuật, Công nghệ, Tự nhiên', icon: 'fa-microchip' },
+      { id: 'A01', group: 'A', name: 'A01: Toán, Vật lý, Tiếng Anh', desc: 'IT, Kinh tế, Kỹ thuật cao', icon: 'fa-laptop-code' },
+      { id: 'A02', group: 'A', name: 'A02: Toán, Vật lý, Sinh học', desc: 'Y sinh, Thiết bị Y tế, Nông nghiệp', icon: 'fa-dna' },
+      { id: 'A07', group: 'A', name: 'A07: Toán, Lịch sử, Địa lý', desc: 'Địa chất, Quản lý đô thị', icon: 'fa-compass' },
+
+      // Khối B
+      { id: 'B00', group: 'B', name: 'B00: Toán, Hóa học, Sinh học', desc: 'Y Dược, Sinh học, Môi trường', icon: 'fa-user-nurse' },
+      { id: 'B08', group: 'B', name: 'B08: Toán, Sinh học, Tiếng Anh', desc: 'Công nghệ sinh học, Y tế công cộng', icon: 'fa-flask-vial' },
+
+      // Khối C
+      { id: 'C00', group: 'C', name: 'C00: Ngữ văn, Lịch sử, Địa lý', desc: 'Báo chí, Luật, Văn hóa, Du lịch', icon: 'fa-book-open' },
+      { id: 'C01', group: 'C', name: 'C01: Ngữ văn, Toán, Vật lý', desc: 'Truyền thông đa phương tiện, Quản lý', icon: 'fa-clapperboard' },
+      { id: 'C02', group: 'C', name: 'C02: Ngữ văn, Toán, Hóa học', desc: 'Quản trị thương mại, Môi trường', icon: 'fa-flask' },
+      { id: 'C03', group: 'C', name: 'C03: Ngữ văn, Toán, Lịch sử', desc: 'Luật học, Hành chính, An ninh', icon: 'fa-scale-balanced' },
+      { id: 'C04', group: 'C', name: 'C04: Ngữ văn, Toán, Địa lý', desc: 'Du lịch, Quản lý đất đai, Xã hội', icon: 'fa-map-location-dot' },
+
+      // Khối D
+      { id: 'D01', group: 'D', name: 'D01: Toán, Ngữ văn, Tiếng Anh', desc: 'Đa dụng: Kinh tế, Ngôn ngữ, MKT', icon: 'fa-globe' },
+      { id: 'D07', group: 'D', name: 'D07: Toán, Hóa học, Tiếng Anh', desc: 'Công nghệ thực phẩm, Hóa dược', icon: 'fa-atom' },
+      { id: 'D08', group: 'D', name: 'D08: Toán, Sinh học, Tiếng Anh', desc: 'Nông lâm nghiệp, Y sinh', icon: 'fa-leaf' },
+      { id: 'D09', group: 'D', name: 'D09: Toán, Lịch sử, Tiếng Anh', desc: 'Quan hệ quốc tế, Ngoại giao', icon: 'fa-handshake' },
+      { id: 'D10', group: 'D', name: 'D10: Toán, Địa lý, Tiếng Anh', desc: 'Quản trị du lịch, Thương mại', icon: 'fa-plane-departure' },
+      { id: 'D14', group: 'D', name: 'D14: Ngữ văn, Lịch sử, Tiếng Anh', desc: 'Ngôn ngữ, Truyền thông, Sư phạm', icon: 'fa-language' },
+      { id: 'D15', group: 'D', name: 'D15: Ngữ văn, Địa lý, Tiếng Anh', desc: 'Du lịch lữ hành, Quan hệ công chúng', icon: 'fa-bullhorn' },
+
+      // Năng Khiếu
+      { id: 'H00', group: 'ART', name: 'H00: Văn, Vẽ Hình họa, Vẽ Trang trí', desc: 'Thiết kế đồ họa, Mỹ thuật công nghiệp', icon: 'fa-palette' },
+      { id: 'V00', group: 'ART', name: 'V00: Toán, Vật lý, Vẽ Mỹ thuật', desc: 'Kiến trúc, Quy hoạch đô thị', icon: 'fa-pen-ruler' },
+      { id: 'K01', group: 'ART', name: 'K01: Toán, Tiếng Anh, Vẽ Nghệ thuật', desc: 'Thiết kế nội thất, Sáng tạo thị giác', icon: 'fa-paintbrush' }
+    ];
+
+    // 12 REALISTIC GRADE 12 PSYCHOLOGICAL QUESTIONS
+    const QUIZ_QUESTIONS = [
+      {
+        id: 1,
+        tag: "Áp Lực Đồng Lứa (Peer Pressure)",
+        question: "Khi thấy bạn bè xung quanh đã luyện giải đề thành thạo hoặc đỗ chứng chỉ IELTS cao, bạn cảm thấy thế nào?",
+        options: [
+          { text: "Bị hoảng hốt và áp lực, dễ rơi vào trạng thái so sánh bản thân rồi tự trách", type: "STRESS_SENSITIVE" },
+          { text: "Thấy lo lắng nhưng lấy đó làm động lực tập trung điều chỉnh lộ trình cá nhân", type: "RESILIENT" },
+          { text: "Khá bình tĩnh vì tin vào định hướng và tiến độ riêng của mình", type: "CONFIDENT" },
+          { text: "Chủ động nhắn tin hỏi bí quyết và học hỏi kinh nghiệm từ bạn", type: "SOCIAL" }
+        ]
+      },
+      {
+        id: 2,
+        tag: "Kỳ Vọng Gia Đình",
+        question: "Bố mẹ muốn bạn chọn ngành an toàn/lương cao, nhưng bạn thích một ngành hoàn toàn khác. Bạn sẽ:",
+        options: [
+          { text: "Nhẫn nại làm bản phân tích chi tiết cơ hội nghề nghiệp để thuyết phục bố mẹ", type: "ANALYTICAL" },
+          { text: "Âm thầm nghe theo ý bố mẹ vì sợ làm người thân thất vọng hay xung đột", type: "STRESS_SENSITIVE" },
+          { text: "Quyết liệt bảo vệ quan điểm đến cùng dù có tranh luận căng thẳng", type: "CONFIDENT" },
+          { text: "Tìm sự tư vấn trung gian từ thầy cô hoặc anh chị có uy tín", type: "SOCIAL" }
+        ]
+      },
+      {
+        id: 3,
+        tag: "Phong Cách Học Tập",
+        question: "Trong các buổi ôn thi cường độ cao, cách học nào giúp bạn nạp kiến thức hiệu quả nhất?",
+        options: [
+          { text: "Một mình yên tĩnh với tai nghe, tự tổng hợp sơ đồ tư duy tỉ mỉ", type: "ANALYTICAL" },
+          { text: "Học nhóm, vừa thảo luận vừa giảng lại bài cho bạn bè", type: "SOCIAL" },
+          { text: "Luyện giải thật nhiều dạng đề thực tế, ghi lại lỗi sai", type: "RESILIENT" },
+          { text: "Thích sáng tạo nội dung, ghi chú nhiều màu sắc và hình vẽ minh họa", type: "CREATIVE" }
+        ]
+      },
+      {
+        id: 4,
+        tag: "Ứng Phó Burnout",
+        question: "Khi rơi vào trạng thái quá tải (burnout), học không vào kiến thức nữa, bạn thường chọn cách nào?",
+        options: [
+          { text: "Tạm dừng 1-2 tiếng để vẽ tranh, nghe nhạc, làm việc sáng tạo để giải tỏa", type: "CREATIVE" },
+          { text: "Đi tâm sự với bạn thân hoặc tham gia hoạt động thể thao vận động", type: "SOCIAL" },
+          { text: "Ép bản thân tiếp tục ngồi vào bàn vì sợ chậm tiến độ so với lịch", type: "STRESS_SENSITIVE" },
+          { text: "Ngủ một giấc sâu rồi phân chia lại lịch học thành các khoảng Pomodoro nhỏ", type: "ANALYTICAL" }
+        ]
+      },
+      {
+        id: 5,
+        tag: "Nỗi Sợ Chọn Sai Ngành",
+        question: "Điều gì khiến bạn lo lắng nhất khi tưởng tượng mình bước vào giảng đường Đại học?",
+        options: [
+          { text: "Sợ học xong ra trường không tìm được việc làm hoặc lương thấp", type: "RESILIENT" },
+          { text: "Sợ phát hiện ra ngành học không đúng đam mê thực sự của bản thân", type: "CREATIVE" },
+          { text: "Sợ không hòa nhập được với môi trường và bạn bè mới", type: "SOCIAL" },
+          { text: "Sợ chương trình học quá khó, không đủ năng lực tư duy đuổi kịp", type: "STRESS_SENSITIVE" }
+        ]
+      },
+      {
+        id: 6,
+        tag: "Động Lực Nghề Nghiệp",
+        question: "Nếu phải chọn giữa 2 công việc trong tương lai, bạn nghiêng về phương án nào?",
+        options: [
+          { text: "Công việc có thu nhập cao, thăng tiến rõ ràng dù áp lực lớn", type: "CONFIDENT" },
+          { text: "Công việc được tự do sáng tạo, không gò bó quy chuẩn khô khan", type: "CREATIVE" },
+          { text: "Công việc có ý nghĩa cộng đồng, giúp đỡ nhiều người xung quanh", type: "SOCIAL" },
+          { text: "Công việc ổn định, an toàn, ít rủi ro biến động", type: "STRESS_SENSITIVE" }
+        ]
+      },
+      {
+        id: 7,
+        tag: "Tư Duy Giải Quyết Tình Huống",
+        question: "Khi đối mặt với một dạng toán hoặc câu hỏi vận dụng cao hoàn toàn mới trong đề thi thử:",
+        options: [
+          { text: "Hào hứng bóc tách từng dữ kiện logic để tìm ra quy luật ẩn", type: "ANALYTICAL" },
+          { text: "Thử tìm các góc nhìn phá cách hoặc loại trừ đáp án mẹo", type: "CREATIVE" },
+          { text: "Thấy hoang mang và bỏ qua ngay để làm câu dễ hơn", type: "STRESS_SENSITIVE" },
+          { text: "Bình tĩnh ghi lại câu đó để tối về hỏi nhóm bạn hoặc thầy cô", type: "SOCIAL" }
+        ]
+      },
+      {
+        id: 8,
+        tag: "Thái Độ Với Thất Bại",
+        question: "Khi nhận kết quả một bài thi thử điểm thấp hơn rất nhiều so với kỳ vọng:",
+        options: [
+          { text: "Buồn mất vài ngày và tự nghi ngờ năng lực thi cử của mình", type: "STRESS_SENSITIVE" },
+          { text: "Xem lại từng câu sai, phân loại lỗi (hổng kiến thức hay ẩu) để khắc phục", type: "ANALYTICAL" },
+          { text: "Coi đó là bài học đắt giá để bứt phá mạnh mẽ hơn ở kỳ thi thật", type: "RESILIENT" },
+          { text: "Chia sẻ với gia đình / bạn bè để giải tỏa cảm xúc tiêu cực", type: "SOCIAL" }
+        ]
+      },
+      {
+        id: 9,
+        tag: "Xu Hướng Giao Tiếp",
+        question: "Trong một buổi sinh hoạt lớp hoặc làm việc nhóm trực tuyến:",
+        options: [
+          { text: "Thường giữ vai trò điều phối, phân công nhiệm vụ và chốt ý kiến", type: "CONFIDENT" },
+          { text: "Đóng góp các ý tưởng độc đáo, mới mẻ mà ít ai nghĩ tới", type: "CREATIVE" },
+          { text: "Lắng nghe, ghi chép lại chi tiết và thực hiện chuẩn xác phần việc được giao", type: "ANALYTICAL" },
+          { text: "Quan tâm đến không khí nhóm, giảng hòa nếu có mâu thuẫn", type: "SOCIAL" }
+        ]
+      },
+      {
+        id: 10,
+        tag: "Môi Trường Tương Lai",
+        question: "Hình ảnh nào phản ánh đúng không gian làm việc mơ ước của bạn sau 5 năm nữa?",
+        options: [
+          { text: "Phòng nghiên cứu/công nghệ hiện đại với hệ thống máy tính cấu hình cao", type: "ANALYTICAL" },
+          { text: "Studio sáng tạo nghệ thuật tự do, không gian mở tràn ngập ánh sáng", type: "CREATIVE" },
+          { text: "Tòa nhà văn phòng hiện đại tại trung tâm, thường xuyên đi gặp đối tác", type: "CONFIDENT" },
+          { text: "Trường học, bệnh viện hoặc tổ chức xã hội mang lại giá trị nhân văn", type: "SOCIAL" }
+        ]
+      },
+      {
+        id: 11,
+        tag: "Mức Độ Kiên Nhẫn",
+        question: "Khi phải thực hiện một công việc đòi hỏi ngồi kiểm tra từng chi tiết nhỏ lặp đi lặp lại:",
+        options: [
+          { text: "Rất cẩn thận tỉ mỉ, thích cảm giác mọi thứ ngăn nắp hoàn hảo", type: "ANALYTICAL" },
+          { text: "Rất mau chán, thích công việc biến đổi liên tục", type: "CREATIVE" },
+          { text: "Hoàn thành tốt nếu công việc đó mang lại giá trị xứng đáng", type: "RESILIENT" },
+          { text: "Dễ bị xao nhãng nếu không có người trò chuyện cùng", type: "SOCIAL" }
+        ]
+      },
+      {
+        id: 12,
+        tag: "Khả Năng Độc Lập",
+        question: "Khi phải tự mình ra một quyết định lớn trong đời mà không ai hỗ trợ:",
+        options: [
+          { text: "Tự tin dựa vào sự phân tích logic và nghiên cứu số liệu của bản thân", type: "ANALYTICAL" },
+          { text: "Sẵn sàng mạo hiểm đi theo tiếng gọi cảm xúc và bản năng", type: "CREATIVE" },
+          { text: "Quyết đoán chịu trách nhiệm cho mọi kịch bản xảy ra", type: "CONFIDENT" },
+          { text: "Thấy khá băn khoăn và mong muốn có sự đồng hành của người thân", type: "STRESS_SENSITIVE" }
+        ]
+      }
+    ];
+
+    const PERSONALITY_PROFILES = {
+      ANALYTICAL: {
+        title: "Tư Duy Phân Tích & Hệ Thống (Analytical Leader)",
+        desc: "Bạn có cái đầu lạnh, cẩn trọng và tư duy logic vượt trội. Bạn không dễ bị cảm xúc chi phối mà luôn tìm kiếm dữ liệu thực tế. Bạn đặc biệt thích hợp với các ngành Công nghệ, Tài chính, Nghiên cứu và Kỹ thuật."
+      },
+      CREATIVE: {
+        title: "Sáng Tạo Đột Phá & Cảm Xúc (Creative Innovator)",
+        desc: "Bạn sở hữu trí tưởng tượng phong phú, nhạy bén với cái đẹp và xu hướng mới. Bạn ghét sự gò bó, thích tự do thể hiện góc nhìn cá nhân. Bạn sinh ra để dành cho Thiết kế, Truyền thông, Marketing và Nghệ thuật."
+      },
+      CONFIDENT: {
+        title: "Quyết Đoán & Bản Lĩnh Lãnh Đạo (Executive Strategist)",
+        desc: "Bạn có tinh thần chiến đấu cao, chịu được áp lực lớn và không ngại thử thách. Bạn có tố chất dẫn dắt người khác và hướng tới mục tiêu lớn. Rất phù hợp với Quản trị, Kinh doanh, Thương mại và Luật."
+      },
+      SOCIAL: {
+        title: "Thấu Hiểu & Kết Nối Cộng Đồng (Humanistic Connector)",
+        desc: "Bạn có trí tuệ cảm xúc (EQ) cao, biết lắng nghe và mang lại cảm giác an toàn cho người xung quanh. Bạn phù hợp với các ngành Tâm lý học, Giáo dục, Y tế, Dịch vụ và Quản trị nhân sự."
+      },
+      RESILIENT: {
+        title: "Bền Bỉ & Thực Chiến (Resilient Executer)",
+        desc: "Bạn là người thực tế, có sức bền tâm lý tốt và khả năng thích nghi cao dưới áp lực thi cử. Bạn là nhân tố vững chắc trong mọi tổ chức."
+      },
+      STRESS_SENSITIVE: {
+        title: "Nhạy Cảm & Cần Lộ Trình An Toàn (Empathetic & Careful)",
+        desc: "Bạn có tâm hồn nhạy cảm, dễ bị ảnh hưởng bởi áp lực thi cử. Bạn cần một môi trường học tập nhẹ nhàng, có lộ trình rõ ràng và bệ đỡ vững chắc từ người thân."
+      }
+    };
+
+    // MAJORS DATABASE WITH VIETNAMESE UNIVERSITIES & PRACTICAL CHALLENGES
+    const MAJORS_DATABASE = [
+      {
+        id: 'design',
+        name: 'Thiết Kế Đồ Họa & Truyền Thông Thị Giác',
+        category: 'CREATIVE',
+        subjects: ['D01', 'C00', 'A01', 'C01', 'H00', 'V00', 'K01'],
+        matchScore: 96,
+        desc: 'Sáng tạo nhận diện thương hiệu, minh họa nội dung, đồ họa truyền thông và trải nghiệm giao diện người dùng.',
+        salary: '12 - 30 triệu/tháng',
+        universities: [
+          { name: 'Đại học Kiến trúc TP.HCM / Hà Nội', type: 'Công lập top đầu', location: 'HCM / HN' },
+          { name: 'Đại học Mỹ thuật TP.HCM / Hà Nội', type: 'Chuyên sâu mỹ thuật', location: 'HCM / HN' },
+          { name: 'Đại học Văn Lang', type: 'Tư thục uy tín ngành Thiết kế', location: 'TP.HCM' },
+          { name: 'Đại học RMIT Việt Nam', type: 'Quốc tế tiêu chuẩn cao', location: 'HCM / HN' },
+          { name: 'Đại học FPT', type: 'Môi trường công nghệ ứng dụng', location: 'Toàn quốc' }
+        ],
+        challengeType: 'CANVAS_DESIGN'
+      },
+      {
+        id: 'it',
+        name: 'Công Nghệ Thông Tin & Kỹ Thuật Phần Mềm',
+        category: 'ANALYTICAL',
+        subjects: ['A00', 'A01', 'D01', 'D07', 'A02'],
+        matchScore: 94,
+        desc: 'Xây dựng ứng dụng, giải quyết bài toán thuật toán, phát triển phần mềm và trí tuệ nhân tạo (AI).',
+        salary: '15 - 40 triệu/tháng',
+        universities: [
+          { name: 'Trường ĐH Bách Khoa (ĐHQG)', type: 'Kỹ thuật top 1', location: 'HCM / HN' },
+          { name: 'Trường ĐH Công nghệ Thông tin (UIT - ĐHQG-HCM)', type: 'Chuyên sâu CNTT', location: 'TP.HCM' },
+          { name: 'Trường ĐH FPT', type: 'Đào tạo gắn liền doanh nghiệp', location: 'Toàn quốc' },
+          { name: 'Trường ĐH Khoa học Tự nhiên', type: 'Nghiên cứu nền tảng', location: 'HCM / HN' }
+        ],
+        challengeType: 'LOGIC_CODE'
+      },
+      {
+        id: 'marketing',
+        name: 'Digital Marketing & Sáng Tạo Nội Dung',
+        category: 'CREATIVE',
+        subjects: ['D01', 'A01', 'C00', 'C01', 'D14', 'D15'],
+        matchScore: 92,
+        desc: 'Xây dựng chiến dịch truyền thông, sáng tạo Slogan, phát triển nội dung đa nền tảng và nghiên cứu thị trường.',
+        salary: '12 - 28 triệu/tháng',
+        universities: [
+          { name: 'Đại học Kinh tế TP.HCM (UEH) / NEU Hà Nội', type: 'Khối Kinh tế top 1', location: 'HCM / HN' },
+          { name: 'Trường ĐH Kinh tế - Luật (UEL - ĐHQG)', type: 'Chất lượng cao', location: 'TP.HCM' },
+          { name: 'Đại học Tôn Đức Thắng (TDTU)', type: 'Cơ sở vật chất hiện đại', location: 'TP.HCM' },
+          { name: 'Đại học Tài chính - Marketing (UFM)', type: 'Chuyên ngành Marketing', location: 'TP.HCM' }
+        ],
+        challengeType: 'SLOGAN_CREATOR'
+      },
+      {
+        id: 'finance',
+        name: 'Tài Chính - Đầu Tư & Phân Tích Dữ Liệu',
+        category: 'ANALYTICAL',
+        subjects: ['A00', 'A01', 'D01', 'D07', 'C02', 'D09'],
+        matchScore: 89,
+        desc: 'Tối ưu hóa ngân sách, quản lý danh mục đầu tư, phân tích số liệu tài chính và quản trị rủi ro.',
+        salary: '15 - 35 triệu/tháng',
+        universities: [
+          { name: 'Đại học Kinh tế TP.HCM (UEH)', type: 'Top 1 Ngân hàng Tài chính', location: 'TP.HCM' },
+          { name: 'Học viện Ngân hàng / Học viện Tài chính', type: 'Chuyên sâu tài chính', location: 'Hà Nội' },
+          { name: 'Đại học Ngoại Thương (FTU)', type: 'Năng động, điểm chuẩn cao', location: 'HCM / HN' }
+        ],
+        challengeType: 'FINANCE_CALC'
+      },
+      {
+        id: 'psychology',
+        name: 'Tâm Lý Học Học Đường & Tư Vấn Cố Vấn',
+        category: 'SOCIAL',
+        subjects: ['C00', 'D01', 'B00', 'C03', 'C04', 'D14'],
+        matchScore: 91,
+        desc: 'Thấu hiểu hành vi con người, tư vấn tâm lý tuổi học đường, giải tỏa áp lực và định hướng phát triển.',
+        salary: '10 - 22 triệu/tháng',
+        universities: [
+          { name: 'ĐH Khoa Học Xã Hội & Nhân Văn (ĐHQG)', type: 'Top đầu KHXH&NV', location: 'HCM / HN' },
+          { name: 'Đại học Sư Phạn TP.HCM / Hà Nội', type: 'Chuyên sâu tâm lý giáo dục', location: 'HCM / HN' },
+          { name: 'Đại học Văn Lang', type: 'Ứng dụng tâm lý học đường', location: 'TP.HCM' }
+        ],
+        challengeType: 'PSYCHOLOGY_CASE'
+      }
+    ];
+
+    // APPLICATION STATE MANAGEMENT
+    let currentState = {
+      step: 1,
+      selectedSubjects: [], // Array of subject codes or custom text tags
+      currentFilterGroup: 'ALL',
+      searchKeyword: '',
+      quizAnswers: {}, 
+      currentQuizIdx: 0,
+      personalityResult: null,
+      activeMajor: null
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSubjectOptions();
+      setupCustomInputListeners();
+    });
+
+    // ================= STEP 1 FUNCTIONS =================
+    function setupCustomInputListeners() {
+      const input = document.getElementById('custom-subject-input');
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ',') {
+          e.preventDefault();
+          addCustomInputTag();
+        }
+      });
+    }
+
+    function addCustomInputTag() {
+      const input = document.getElementById('custom-subject-input');
+      const val = input.value.trim().replace(/,/g, '');
+      if (val) {
+        // Upper case if it looks like a subject code, otherwise keep normal text
+        const tag = val.length <= 4 ? val.toUpperCase() : val;
+        if (!currentState.selectedSubjects.includes(tag)) {
+          currentState.selectedSubjects.push(tag);
+        }
+        input.value = '';
+        renderSelectedTags();
+        renderSubjectOptions();
+        document.getElementById('step1-error').classList.add('hidden');
+      }
+    }
+
+    function removeTag(tag) {
+      currentState.selectedSubjects = currentState.selectedSubjects.filter(t => t !== tag);
+      renderSelectedTags();
+      renderSubjectOptions();
+    }
+
+    function renderSelectedTags() {
+      const container = document.getElementById('selected-tags-container');
+      const totalCounter = document.getElementById('total-selected-count');
+      totalCounter.innerText = currentState.selectedSubjects.length;
+
+      if (currentState.selectedSubjects.length === 0) {
+        container.innerHTML = `<span class="text-[11px] text-slate-500 italic py-1">Chưa có tổ hợp nào được chọn</span>`;
+        return;
+      }
+
+      container.innerHTML = currentState.selectedSubjects.map(tag => `
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-brand-500/20 border border-brand-500/40 text-brand-300 font-bold text-xs animate-fade-in">
+          <span>${tag}</span>
+          <button onclick="removeTag('${tag}')" class="hover:text-rose-400 text-slate-400 text-[11px] transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </span>
+      `).join('');
+    }
+
+    function renderSubjectOptions() {
+      const grid = document.getElementById('subjects-grid');
+      renderSelectedTags();
+
+      const filtered = EXTENDED_SUBJECTS.filter(sub => {
+        const matchGroup = currentState.currentFilterGroup === 'ALL' || sub.group === currentState.currentFilterGroup;
+        const matchSearch = currentState.searchKeyword === '' || 
+                            sub.name.toLowerCase().includes(currentState.searchKeyword.toLowerCase()) ||
+                            sub.desc.toLowerCase().includes(currentState.searchKeyword.toLowerCase());
+        return matchGroup && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-8 text-center text-slate-400 text-xs bg-slate-900/50 rounded-2xl border border-slate-800">
+            <i class="fa-solid fa-magnifying-glass-minus text-2xl mb-2 text-slate-500"></i>
+            <p>Không tìm thấy khối thi phù hợp với từ khóa "${currentState.searchKeyword}".</p>
+            <p class="text-[11px] text-slate-500 mt-1">Bạn có thể tự gõ môn/khối thi ở ô nhập liệu phía trên!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(sub => {
+        const isSelected = currentState.selectedSubjects.includes(sub.id);
+        return `
+          <div onclick="toggleSubject('${sub.id}')" 
+               class="glass-card-interactive p-3.5 rounded-2xl cursor-pointer relative flex flex-col justify-between border ${isSelected ? 'border-brand-500 bg-brand-500/15 ring-2 ring-brand-500/30' : 'border-slate-800/80'}">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-8 h-8 rounded-xl ${isSelected ? 'bg-brand-500 text-white shadow-md shadow-brand-500/30' : 'bg-slate-800 text-slate-400'} flex items-center justify-center text-xs transition-colors">
+                  <i class="fa-solid ${sub.icon}"></i>
+                </div>
+                <div class="w-5 h-5 rounded-md border ${isSelected ? 'bg-brand-500 border-brand-500 text-white' : 'border-slate-700'} flex items-center justify-center text-[10px]">
+                  ${isSelected ? '<i class="fa-solid fa-check"></i>' : ''}
+                </div>
+              </div>
+              <h4 class="font-bold text-white text-xs sm:text-sm">${sub.name}</h4>
+              <p class="text-[11px] text-slate-400 mt-1 line-clamp-1">${sub.desc}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleSubject(id) {
+      document.getElementById('step1-error').classList.add('hidden');
+      if (currentState.selectedSubjects.includes(id)) {
+        currentState.selectedSubjects = currentState.selectedSubjects.filter(item => item !== id);
+      } else {
+        currentState.selectedSubjects.push(id);
+      }
+      renderSubjectOptions();
+    }
+
+    function setFilterGroup(group) {
+      currentState.currentFilterGroup = group;
+      
+      // Update UI Tabs Styling
+      const buttons = document.querySelectorAll('.group-tab');
+      buttons.forEach(btn => {
+        btn.className = "group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:text-white flex-shrink-0 transition-all";
+      });
+      event.target.className = "group-tab px-3 py-1 rounded-lg text-xs font-semibold bg-brand-600 text-white flex-shrink-0 transition-all";
+
+      renderSubjectOptions();
+    }
+
+    function filterSubjects() {
+      currentState.searchKeyword = document.getElementById('subject-search').value.trim();
+      renderSubjectOptions();
+    }
+
+    function goToStep2() {
+      if (currentState.selectedSubjects.length === 0) {
+        document.getElementById('step1-error').classList.remove('hidden');
+        return;
+      }
+      currentState.step = 2;
+      updateProgressBar();
+      showStepSection('step-2');
+      renderQuizQuestion();
+    }
+
+    // ================= STEP 2 FUNCTIONS (QUIZ) =================
+    function renderQuizQuestion() {
+      const q = QUIZ_QUESTIONS[currentState.currentQuizIdx];
+      document.getElementById('quiz-counter').innerText = `Câu ${currentState.currentQuizIdx + 1} / ${QUIZ_QUESTIONS.length}`;
+      document.getElementById('question-tag').innerText = q.tag;
+      document.getElementById('question-text').innerText = `${q.id}. ${q.question}`;
+
+      // Update inner quiz progress bar
+      const progressPercent = ((currentState.currentQuizIdx + 1) / QUIZ_QUESTIONS.length) * 100;
+      document.getElementById('inner-quiz-progress').style.width = `${progressPercent}%`;
+
+      const optionsContainer = document.getElementById('options-container');
+      const selectedType = currentState.quizAnswers[q.id];
+
+      optionsContainer.innerHTML = q.options.map((opt, idx) => {
+        const isSelected = selectedType === opt.type;
+        return `
+          <button onclick="selectQuizOption('${opt.type}')" class="w-full text-left p-3.5 sm:p-4 rounded-xl border transition-all flex items-start gap-3 ${isSelected ? 'bg-brand-500/15 border-brand-500 text-white shadow-md shadow-brand-500/10' : 'bg-slate-900/50 border-slate-800 text-slate-300 hover:bg-slate-800/80 hover:border-slate-700'}">
+            <span class="w-6 h-6 rounded-full ${isSelected ? 'bg-brand-500 text-white' : 'bg-slate-800 text-slate-400'} text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5 border border-slate-700">
+              ${String.fromCharCode(65 + idx)}
+            </span>
+            <span class="text-xs sm:text-sm font-medium leading-relaxed">${opt.text}</span>
+          </button>
+        `;
+      }).join('');
+
+      document.getElementById('btn-prev-question').disabled = currentState.currentQuizIdx === 0;
+      
+      const nextBtn = document.getElementById('btn-next-question');
+      if (currentState.currentQuizIdx === QUIZ_QUESTIONS.length - 1) {
+        nextBtn.innerHTML = `<span>Phân Tích Ngành & Trường</span> <i class="fa-solid fa-sparkles text-amber-300"></i>`;
+        nextBtn.className = "px-6 py-2.5 rounded-xl bg-gradient-to-r from-accent-600 to-brand-600 hover:from-accent-500 hover:to-brand-500 text-white font-bold text-xs transition-all shadow-lg shadow-accent-500/25 flex items-center gap-2";
+      } else {
+        nextBtn.innerHTML = `<span>Tiếp theo</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>`;
+        nextBtn.className = "px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition-all shadow-md flex items-center gap-2";
+      }
+    }
+
+    function selectQuizOption(type) {
+      const q = QUIZ_QUESTIONS[currentState.currentQuizIdx];
+      currentState.quizAnswers[q.id] = type;
+      renderQuizQuestion();
+    }
+
+    function prevQuestion() {
+      if (currentState.currentQuizIdx > 0) {
+        currentState.currentQuizIdx--;
+        renderQuizQuestion();
+      }
+    }
+
+    function nextQuestion() {
+      const currentQ = QUIZ_QUESTIONS[currentState.currentQuizIdx];
+      if (!currentState.quizAnswers[currentQ.id]) {
+        alert("Vui lòng chọn 1 câu trả lời trước khi chuyển sang câu tiếp theo!");
+        return;
+      }
+
+      if (currentState.currentQuizIdx < QUIZ_QUESTIONS.length - 1) {
+        currentState.currentQuizIdx++;
+        renderQuizQuestion();
+      } else {
+        calculatePersonalityResult();
+        goToStep3();
+      }
+    }
+
+    function calculatePersonalityResult() {
+      const counts = {};
+      Object.values(currentState.quizAnswers).forEach(type => {
+        counts[type] = (counts[type] || 0) + 1;
+      });
+
+      let topType = 'ANALYTICAL';
+      let maxCount = -1;
+      for (const [type, count] of Object.entries(counts)) {
+        if (count > maxCount) {
+          maxCount = count;
+          topType = type;
+        }
+      }
+      currentState.personalityResult = topType;
+    }
+
+    // ================= STEP 3 FUNCTIONS (RECOMMENDATIONS) =================
+    function goToStep3() {
+      currentState.step = 3;
+      updateProgressBar();
+      showStepSection('step-3');
+      renderRecommendations();
+    }
+
+    function renderRecommendations() {
+      const profile = PERSONALITY_PROFILES[currentState.personalityResult] || PERSONALITY_PROFILES['ANALYTICAL'];
+      document.getElementById('personality-title').innerText = profile.title;
+      document.getElementById('personality-desc').innerText = profile.desc;
+
+      document.getElementById('summary-subjects').innerHTML = currentState.selectedSubjects.map(s => 
+        `<span class="px-2.5 py-1 rounded-lg bg-brand-500/20 text-brand-300 font-bold text-xs border border-brand-500/30">${s}</span>`
+      ).join('');
+
+      const filteredMajors = MAJORS_DATABASE.map(major => {
+        let matchScore = 55;
+        
+        // Flexible subject match calculation for both standard codes and custom user tags
+        const hasSubjectMatch = major.subjects.some(sub => 
+          currentState.selectedSubjects.some(selected => 
+            selected.toLowerCase().includes(sub.toLowerCase()) || sub.toLowerCase().includes(selected.toLowerCase())
+          )
+        );
+        if (hasSubjectMatch) matchScore += 25;
+
+        if (major.category === currentState.personalityResult) matchScore += 18;
+
+        return { ...major, calculatedMatch: Math.min(matchScore, 98) };
+      }).sort((a, b) => b.calculatedMatch - a.calculatedMatch);
+
+      const container = document.getElementById('career-list');
+      container.innerHTML = filteredMajors.map(major => `
+        <div class="glass-card rounded-3xl p-6 transition-all hover:border-slate-700 border border-slate-800/80 space-y-5">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+            <div class="space-y-1.5">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-bold ${major.calculatedMatch >= 85 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'}">
+                  <i class="fa-solid fa-bolt mr-1"></i> Tương thích ${major.calculatedMatch}%
+                </span>
+                <span class="text-xs text-slate-400 flex items-center gap-1">
+                  <i class="fa-solid fa-coins text-amber-400"></i> ${major.salary}
+                </span>
+              </div>
+
+              <h4 class="text-xl font-extrabold text-white">${major.name}</h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${major.desc}</p>
+            </div>
+
+            <button onclick="startPracticalChallenge('${major.id}')" class="w-full md:w-auto px-5 py-3 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-500 hover:to-accent-500 text-white font-bold text-xs transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2 flex-shrink-0">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>Test Thực Hành Ngành Này</span>
+            </button>
+          </div>
+
+          <!-- University List Section -->
+          <div>
+            <div class="text-xs font-bold text-slate-300 mb-2.5 flex items-center gap-2">
+              <i class="fa-solid fa-building-columns text-brand-400"></i>
+              <span>Top Trường Đại Học Đào Tạo Uy Tín Tại Việt Nam:</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+              ${major.universities.map(uni => `
+                <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between">
+                  <div class="font-semibold text-xs text-slate-100 mb-1">${uni.name}</div>
+                  <div class="flex items-center justify-between text-[10px] text-slate-400">
+                    <span class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">${uni.type}</span>
+                    <span class="text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i>${uni.location}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ================= STEP 4 FUNCTIONS (PRACTICAL CHALLENGES) =================
+    function startPracticalChallenge(majorId) {
+      const major = MAJORS_DATABASE.find(m => m.id === majorId);
+      if (!major) return;
+
+      currentState.activeMajor = major;
+      currentState.step = 4;
+      updateProgressBar();
+      showStepSection('step-4');
+
+      document.getElementById('challenge-major-title').innerText = `Thử Thách Thực Hành: ${major.name}`;
+      document.getElementById('challenge-result-card').classList.add('hidden');
+
+      const workspace = document.getElementById('challenge-workspace');
+
+      if (major.challengeType === 'CANVAS_DESIGN') {
+        renderCanvasDesignChallenge(workspace);
+      } else if (major.challengeType === 'LOGIC_CODE') {
+        renderLogicCodeChallenge(workspace);
+      } else if (major.challengeType === 'SLOGAN_CREATOR') {
+        renderSloganChallenge(workspace);
+      } else if (major.challengeType === 'FINANCE_CALC') {
+        renderFinanceChallenge(workspace);
+      } else if (major.challengeType === 'PSYCHOLOGY_CASE') {
+        renderPsychologyChallenge(workspace);
+      }
+    }
+
+    // Challenge 1: Graphic Design Mini Canvas Workspace
+    function renderCanvasDesignChallenge(container) {
+      container.innerHTML = `
+        <div class="space-y-4">
+          <p class="text-xs text-slate-300">
+            <strong class="text-brand-400">Nhiệm vụ:</strong> Bạn được giao thiết kế một tấm Poster Mini quảng bá sự kiện "Lễ Kết Thúc Lớp 12". Hãy chọn màu sắc, vẽ ý tưởng hoặc viết thông điệp sáng tạo lên Canvas dưới đây!
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 p-3 bg-slate-900/90 rounded-2xl border border-slate-800">
+            <div class="flex items-center gap-1.5">
+              <span class="text-xs text-slate-400 font-medium">Màu cọ:</span>
+              <input type="color" id="brush-color" value="#a855f7" class="w-8 h-8 rounded bg-transparent cursor-pointer border-0">
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <span class="text-xs text-slate-400 font-medium">Size cọ:</span>
+              <input type="range" id="brush-size" min="2" max="20" value="5" class="w-24 accent-brand-500">
+            </div>
+
+            <button onclick="clearCanvas()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300">
+              <i class="fa-solid fa-eraser mr-1"></i> Xóa vẽ lại
+            </button>
+          </div>
+
+          <div class="relative w-full rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 flex justify-center">
+            <canvas id="mini-design-canvas" class="bg-slate-900 cursor-crosshair touch-none" width="700" height="320"></canvas>
+          </div>
+
+          <button onclick="submitCanvasChallenge()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-500 hover:to-accent-500 font-bold text-white text-xs shadow-lg shadow-brand-500/25">
+            Nộp Tác Phẩm & Đánh Giá Năng Khiếu Thiết Kế
+          </button>
+        </div>
+      `;
+
+      setTimeout(initCanvasLogic, 100);
+    }
+
+    let isDrawing = false;
+    function initCanvasLogic() {
+      const canvas = document.getElementById('mini-design-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#334155';
+      ctx.font = '16px Plus Jakarta Sans';
+      ctx.textAlign = 'center';
+      ctx.fillText('Vẽ ý tưởng / Logo kỷ niệm lớp 12 của bạn tại đây...', canvas.width / 2, canvas.height / 2);
+
+      function startDraw(e) {
+        isDrawing = true;
+        ctx.beginPath();
+        const pos = getCanvasPos(e);
+        ctx.moveTo(pos.x, pos.y);
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+        const pos = getCanvasPos(e);
+        ctx.strokeStyle = document.getElementById('brush-color').value;
+        ctx.lineWidth = document.getElementById('brush-size').value;
+        ctx.lineCap = 'round';
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      }
+
+      function stopDraw() { isDrawing = false; }
+
+      function getCanvasPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return { x: clientX - rect.left, y: clientY - rect.top };
+      }
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDraw);
+
+      canvas.addEventListener('touchstart', startDraw);
+      canvas.addEventListener('touchmove', draw);
+      canvas.addEventListener('touchend', stopDraw);
+    }
+
+    function clearCanvas() {
+      const canvas = document.getElementById('mini-design-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function submitCanvasChallenge() {
+      showChallengeResult(
+        95,
+        "Tư duy thị giác & Thẩm mỹ xuất sắc!",
+        "Bạn có sự chủ động phối màu và kiên nhẫn tạo hình thị giác. Ngành Thiết kế đồ họa & Truyền thông thị giác sẽ giúp bạn biến trí tưởng tượng này thành sự nghiệp thành công!"
+      );
+    }
+
+    // Challenge 2: Logic Programming Challenge
+    function renderLogicCodeChallenge(container) {
+      container.innerHTML = `
+        <div class="space-y-4">
+          <p class="text-xs text-slate-300">
+            <strong class="text-brand-400">Nhiệm vụ:</strong> Đoạn mã tính điểm trung bình xét tuyển tốt nghiệp dưới đây đang bị sai logic (bug). Hãy tìm và sửa lại đúng công thức!
+          </p>
+
+          <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 font-mono text-xs text-emerald-400 space-y-3">
+            <div>// Sửa công thức tính điểm ưu tiên đúng: Total = (Toan + Van + Anh) + Điểm_Ưu_Tiên</div>
+            <div class="text-slate-300">
+              function calculateScore(toan, van, anh, diemUuTien) {<br>
+              &nbsp;&nbsp;<span class="text-slate-500">// Bị lỗi: Đang nhân sai điểm ưu tiên</span><br>
+              &nbsp;&nbsp;let total = <input type="text" id="code-input" value="(toan + van + anh) * diemUuTien" class="bg-slate-800 border border-slate-700 text-amber-300 px-2 py-1 rounded w-64 focus:outline-none focus:border-brand-500 font-mono text-xs"><br>
+              &nbsp;&nbsp;return total;<br>
+              }
+            </div>
+          </div>
+
+          <button onclick="submitCodeChallenge()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-500 hover:to-accent-500 font-bold text-white text-xs shadow-lg shadow-brand-500/25">
+            Kiểm Tra Logic & Chạy Thuật Toán
+          </button>
+        </div>
+      `;
+    }
+
+    function submitCodeChallenge() {
+      const val = document.getElementById('code-input').value.trim().toLowerCase();
+      if (val.includes('+ diemuutien') || val.includes('+diemuutien')) {
+        showChallengeResult(
+          98,
+          "Tư duy Thuật toán & Sửa lỗi (Debug) cực nhạy!",
+          "Bạn đã phát hiện ra lỗi logic chính xác trong 3 giây. Sự cẩn thận tỉ mỉ này chính là tố chất cần thiết nhất của một Kỹ sư phần mềm tương lai!"
+        );
+      } else {
+        showChallengeResult(
+          70,
+          "Cần rèn luyện thêm tư duy cú pháp!",
+          "Công thức đúng phải là cộng điểm ưu tiên chứ không phải nhân. Tuy nhiên bạn đã dám thử sức bài toán lập trình thực tế!"
+        );
+      }
+    }
+
+    // Challenge 3: Marketing Slogan Creator Challenge
+    function renderSloganChallenge(container) {
+      container.innerHTML = `
+        <div class="space-y-4">
+          <p class="text-xs text-slate-300">
+            <strong class="text-brand-400">Nhiệm vụ:</strong> Viết một câu Slogan ngắn (dưới 15 từ) để quảng bá chiến dịch "Thức uống tỉnh táo ôn thi 12" nhằm thu hút Gen Z!
+          </p>
+
+          <textarea id="slogan-input" rows="3" placeholder="Nhập câu Slogan sáng tạo của bạn tại đây (Ví dụ: Bật năng lượng, bứt phá điểm 10)..." class="w-full p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-100 focus:outline-none focus:border-brand-500"></textarea>
+
+          <button onclick="submitSloganChallenge()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-500 hover:to-accent-500 font-bold text-white text-xs shadow-lg shadow-brand-500/25">
+            Chấm Điểm Chỉ Số Sáng Tạo & Bắt Trend
+          </button>
+        </div>
+      `;
+    }
+
+    function submitSloganChallenge() {
+      const text = document.getElementById('slogan-input').value.trim();
+      if (text.length > 5) {
+        showChallengeResult(
+          92,
+          "Khả năng nhạy bén thông điệp & Bắt trend Gen Z!",
+          `Slogan "${text}" có nhịp điệu ấn tượng, bắt trúng tâm lý học sinh 12. Ngành Digital Marketing rất cần những cái đầu sáng tạo như bạn!`
+        );
+      } else {
+        alert("Vui lòng nhập câu Slogan dài hơn một chút để đánh giá nhé!");
+      }
+    }
+
+    // Challenge 4: Finance Investment Challenge
+    function renderFinanceChallenge(container) {
+      container.innerHTML = `
+        <div class="space-y-4">
+          <p class="text-xs text-slate-300">
+            <strong class="text-brand-400">Nhiệm vụ:</strong> Bạn có ngân sách 10.000.000 VNĐ. Hãy phân bổ % ngân sách vào các quỹ dưới đây sao cho tối ưu giữa an toàn và sinh lời!
+          </p>
+
+          <div class="space-y-3 bg-slate-900 p-4 rounded-2xl border border-slate-800">
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1">
+                <span>Gửi tiết kiệm an toàn (Lãi nhẹ): <strong id="val-save">50%</strong></span>
+              </div>
+              <input type="range" id="range-save" min="0" max="100" value="50" oninput="updateFinanceSliders()" class="w-full accent-brand-500">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1">
+                <span>Đầu tư Cổ phiếu & Công nghệ (Sinh lời cao / Rủi ro): <strong id="val-invest">50%</strong></span>
+              </div>
+              <input type="range" id="range-invest" min="0" max="100" value="50" oninput="updateFinanceSliders()" class="w-full accent-accent-500">
+            </div>
+          </div>
+
+          <button onclick="submitFinanceChallenge()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-500 hover:to-accent-500 font-bold text-white text-xs shadow-lg shadow-brand-500/25">
+            Phân Tích Chiến Lược Quản Lý Ngân Sách
+          </button>
+        </div>
+      `;
+    }
+
+    function updateFinanceSliders() {
+      const save = parseInt(document.getElementById('range-save').value);
+      document.getElementById('val-save').innerText = `${save}%`;
+      document.getElementById('val-invest').innerText = `${100 - save}%`;
+      document.getElementById('range-invest').value = 100 - save;
+    }
+
+    function submitFinanceChallenge() {
+      const save = parseInt(document.getElementById('range-save').value);
+      showChallengeResult(
+        88,
+        "Tư duy Quản trị Rủi ro Tài chính Cân bằng!",
+        `Bạn phân bổ ${save}% An toàn và ${100 - save}% Đầu tư. Đây là tư duy phân bổ tài sản rất thực tế của các Chuyên viên Phân tích Tài chính!`
+      );
+    }
+
+    // Challenge 5: Psychology Case Study Challenge
+    function renderPsychologyChallenge(container) {
+      container.innerHTML = `
+        <div class="space-y-4">
+          <p class="text-xs text-slate-300">
+            <strong class="text-brand-400">Tình huống Tham vấn Tâm lý Học đường:</strong> Một học sinh lớp 12 tìm gặp bạn trong tình trạng hoảng loạn vì điểm thi thử giảm sút và bị áp lực gia đình. Bạn sẽ mở đầu cuộc trò chuyện như thế nào?
+          </p>
+
+          <div class="space-y-2">
+            <button onclick="submitPsychologyCase(1)" class="w-full text-left p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 hover:bg-slate-800">
+              A. "Trải lòng và khóc ra được là tốt lắm rồi. Mình ở đây lắng nghe bạn, chuyện gì đã xảy ra vậy?"
+            </button>
+            <button onclick="submitPsychologyCase(2)" class="w-full text-left p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 hover:bg-slate-800">
+              B. "Khóc lóc không giải quyết được vấn đề đâu, đưa đề thi đây mình xem sai ở đâu sửa ngay!"
+            </button>
+            <button onclick="submitPsychologyCase(3)" class="w-full text-left p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 hover:bg-slate-800">
+              C. "Chuyện nhỏ mà, thi thử thôi mà có gì đâu phải áp lực thế!"
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function submitPsychologyCase(choice) {
+      if (choice === 1) {
+        showChallengeResult(
+          96,
+          "Trí tuệ Cảm xúc (EQ) & Lắng nghe Thấu cảm Xuất sắc!",
+          "Bạn đã áp dụng đúng nguyên tắc hàng đầu của Nhà tư vấn tâm lý: Lắng nghe và xoa dịu cảm xúc trước khi giải quyết vấn đề!"
+        );
+      } else {
+        showChallengeResult(
+          72,
+          "Cần tăng cường sự thấu cảm nhẹ nhàng!",
+          "Người đang hoảng loạn cần sự đồng cảm trước khi tiếp nhận các giải pháp logic khô khan."
+        );
+      }
+    }
+
+    function showChallengeResult(score, title, feedback) {
+      const card = document.getElementById('challenge-result-card');
+      document.getElementById('challenge-result-score').innerText = `Chỉ Số Nhạy Bén: ${score}/100 - ${title}`;
+      document.getElementById('challenge-result-feedback').innerText = feedback;
+      card.classList.remove('hidden');
+      card.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function backToStep3() {
+      currentState.step = 3;
+      updateProgressBar();
+      showStepSection('step-3');
+    }
+
+    // GENERAL UI PROGRESS BAR UPDATE
+    function updateProgressBar() {
+      const line = document.getElementById('progress-line');
+      const dots = [1, 2, 3, 4].map(num => document.getElementById(`step${num}-dot`));
+      const labels = [1, 2, 3, 4].map(num => document.getElementById(`step${num}-label`));
+
+      const percentages = ['0%', '33%', '66%', '100%'];
+      line.style.width = percentages[currentState.step - 1];
+
+      dots.forEach((dot, idx) => {
+        const stepNum = idx + 1;
+        if (stepNum < currentState.step) {
+          dot.className = "w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs bg-emerald-500 text-white ring-4 ring-slate-950 shadow-md";
+          labels[idx].className = "text-[11px] font-bold mt-2 text-emerald-400";
+        } else if (stepNum === currentState.step) {
+          dot.className = "w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs bg-brand-600 text-white shadow-lg shadow-brand-600/40 ring-4 ring-slate-950";
+          labels[idx].className = "text-[11px] font-bold mt-2 text-brand-400";
+        } else {
+          dot.className = "w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs bg-slate-900 text-slate-500 ring-4 ring-slate-950 border border-slate-800";
+          labels[idx].className = "text-[11px] font-bold mt-2 text-slate-500";
+        }
+      });
+    }
+
+    function showStepSection(stepId) {
+      ['step-1', 'step-2', 'step-3', 'step-4'].forEach(id => {
+        const sec = document.getElementById(id);
+        if (id === stepId) {
+          sec.classList.remove('hidden');
+          sec.classList.add('animate-fade-in');
+        } else {
+          sec.classList.add('hidden');
+          sec.classList.remove('animate-fade-in');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetAll() {
+      currentState = {
+        step: 1,
+        selectedSubjects: [],
+        currentFilterGroup: 'ALL',
+        searchKeyword: '',
+        quizAnswers: {},
+        currentQuizIdx: 0,
+        personalityResult: null,
+        activeMajor: null
+      };
+      updateProgressBar();
+      renderSubjectOptions();
+      showStepSection('step-1');
+    }
+  </script>
+</body>
+</html>
